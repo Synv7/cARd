@@ -2,7 +2,7 @@
 
 An AR business card for the Bakersfield College Innovation Lab. Point a phone at the
 laser-cut card and a glowing circuit lightbulb rises out of the engraved logo and spins,
-with eight laser-burnt keys under the card: Call, Email, Website, Save contact, LinkedIn,
+with eight matte keys under the card: Call, Email, Website, Save contact, LinkedIn,
 Instagram, Facebook, YouTube.
 
 ## What's in the folder
@@ -10,7 +10,7 @@ Instagram, Facebook, YouTube.
 | File | What it is |
 | --- | --- |
 | `index.html` | The whole experience (HTML, CSS, JS in one file). |
-| `model.glb` | The circuit-lightbulb glTF model (glass, copper traces, filament, orbiting halo with a looping animation). |
+| `model.glb` | The circuit-lightbulb glTF model (glass, copper traces, filament, orbiting circle, square and diamond halo with a looping animation). |
 | `card.jpg` | Photo of the card, used as the texture of the virtual card. |
 | `card-target.jpg` | Cropped card image the tracker learns. |
 
@@ -41,6 +41,7 @@ Everything lives in `CONFIG` at the top of the `<script type="module">` in `inde
 - `keys` — labels, values and links. The four social keys currently point to Bakersfield
   College's official accounts; swap in personal profiles if you prefer.
 - `modelUrl` — any glTF/GLB. It is auto-scaled to stand on the logo.
+- `target.version` — bump this whenever you replace `card-target.jpg` (for example after a new card design), so phones that scanned the old card relearn the new one.
 - `target.mind` — for an instant first scan, compile `card-target.jpg` with MindAR's online
   image-target compiler, save the result as `card.mind` next to `index.html`, and set
   `target: { image: './card-target.jpg', mind: './card.mind' }`.
