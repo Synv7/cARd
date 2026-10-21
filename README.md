@@ -46,6 +46,17 @@ Everything lives in `CONFIG` at the top of the `<script type="module">` in `inde
   image-target compiler, save the result as `card.mind` next to `index.html`, and set
   `target: { image: './card-target.jpg', mind: './card.mind' }`.
 
+## Tracking stability
+
+`CONFIG.tracking` controls how steady the overlay is:
+
+- `smoothing` — a One Euro filter on the card's position and rotation. Lower `posCutoff` / `rotCutoff` makes it steadier when you hold still; higher `posBeta` / `rotBeta` makes it keep up during fast moves.
+- `cameraFov` — the phone camera's field of view across the long side of the image (most phones: 60–70°). If the bulb seems to lean or slide when you tilt the card, nudge this up or down by 5.
+- `holdMs` — how long the overlay stays put when the card is briefly lost.
+- `syncFeed` — shows the exact camera frame each pose was measured on, so the overlay never trails the video. The trade: while locked, the camera image updates at the tracker's rate (usually 20–30 fps) instead of 60.
+
+`CONFIG.motion` sets the bulb's turn speed and the halo animation speed.
+
 ## Scanning tips
 
 Even light, card fully in frame, phone 20–30 cm away. The engraved text and logo give the
